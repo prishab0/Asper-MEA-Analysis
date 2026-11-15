@@ -1,15 +1,3 @@
-# Spiking-network simulation: can burst shape separate rescue from rate-matched suppression?
+# Spiking-network simulation (exploratory)
 
-Model assumptions only, no data. 400 leaky integrate-and-fire neurons (320 excitatory, 80 inhibitory), depressing
-excitatory synapses, background noise. Bursts emerge from recurrent excitation plus depression.
-
-Arms (24 simulated wells each, 30 s, parameter jitter per well):
-- rescue: healthy parameters
-- disease: raised excitatory coupling and reduced inhibition (about 1.8x the rescued firing rate)
-- three suppression arms that keep the diseased network but are each calibrated to the rescued mean rate:
-  lower background drive, weaker excitatory coupling, stronger inhibition
-
-Run order: `calib.py` (calibrates), `run_wells.py 24` (simulates), `analyze.py` and `fig.py`.
-Requires brian2, numpy, scipy, scikit-learn, matplotlib. Seeds are fixed.
-
-This is a test of whether a readout CAN separate two states in a model. It does not show that real cultures behave this way.
+Hand-built Brian2 model, not validation. net.py: first fast-dynamics model (timescales 10 to 50x too fast). net2.py: slower depression (still 0.15 s bursts). net3.py: adds an NMDA-like slow current; control gives about 13 Hz, 0.7 s bursts every 6 to 8 s, near the real day 17/18 plates. bic3.py: GABA block and drive arms. real_wells.csv: per-well burst statistics from the public bicuculline plates. sweep.py / analyze_sweep.py / sweep.json: robustness to well-to-well jitter. Parameters were tuned by hand and bursting only exists in a narrow window; treat results as model properties.
