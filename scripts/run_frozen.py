@@ -119,7 +119,7 @@ mfr["MFR"] = mfr["times"].apply(len) / mfr["times"].apply(max) / mfr["gid"].appl
 tab = tab.merge(mfr[["well", "div", "MFR"]], on=["well", "div"])
 
 # 2. choose the coordinate on day 18 only
-t18, t17 = tab[tab.div == 18], tab[tab.div == 17]
+t18, t17 = tab[tab["div"] == 18], tab[tab["div"] == 17]
 print("\nDay 18 AUC by coordinate (bic vs control):")
 aucs = {c: roc_auc_score(t18.label, t18[c]) for c in ("c1", "c2", "c3", "c4")}
 for c, a in aucs.items():
