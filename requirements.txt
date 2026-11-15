@@ -1,0 +1,7 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+# The burst-shape pipeline scripts (scripts/run_day17.py, run_frozen.py, run_robustness.py,
+# run_lamberti*.py) also need the LevinaLab burst-shape package; see README.
