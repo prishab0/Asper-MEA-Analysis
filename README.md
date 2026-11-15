@@ -59,3 +59,7 @@ All public; see `REFERENCES.md`. Raw data are not stored here.
 ## Licence
 
 MIT (`LICENSE`). The burst-shape package is separately licensed by its authors.
+
+## Simulation (model assumptions, not data)
+
+`simulations/spiking_network/` holds a spiking-network model asking whether burst shape can separate rescue from rate-matched suppression. It shows what the readout can do under the model's assumptions, not that real cultures behave this way. See that folder's README.
