@@ -1,6 +1,6 @@
 # Asper Labs: public MEA reanalysis
 
-Code behind *Asper Labs: public MEA reanalysis* (v6, November 2026; PDF in `docs/`).
+Code behind *Asper Labs: public MEA reanalysis* (v7, November 2026; PDF in `docs/`).
 
 The question: does a representation of the spatiotemporal response, or of burst shape, carry compound-specific information that aggregate measures such as mean firing rate discard? Everything here runs on **public** data. No new recordings were generated.
 
@@ -13,7 +13,7 @@ This is exploratory work, not a validated result. In particular:
 - The central claim, that a readout can separate functional rescue from nonspecific suppression, is **untested**. No analysis here has drug conditions matched on firing rate.
 - Plate position is confounded with treatment in the bicuculline data. Well-level validation does not remove that confound.
 - A preliminary human iPSC result was withdrawn pending a well-level re-analysis and is not part of this repository.
-- Not yet in the repository: the evoked-response decoder script (`theraputing_mea_analysis.py`), which will be added. The output of `scripts/run_frozen.py` and the placebo test `scripts/placebo.py` have not yet been reported.
+- The evoked-response decoder is in `scripts/evoked_decoder.py`. The frozen-embedding replication (`scripts/run_frozen.py`) and the placebo (`scripts/placebo.py`) are reported in the v7 PDF. Both plates share one layout, so replication across plates does not remove the position confound.
 
 ## Layout
 
