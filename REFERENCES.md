@@ -5,7 +5,7 @@ Data and methods used in this repository. Every dataset below is public. Cite th
 ## Data
 
 1. Wagenaar DA, Pine J, Potter SM. An extremely rich repertoire of bursting patterns during the development of cortical cultures. *BMC Neuroscience* 2006;7:11. doi:10.1186/1471-2202-7-11. Data: potterlab.bme.gatech.edu/development-data/
-2. Vinogradov et al. Bicuculline (blocked inhibition) recordings of mouse cortical cultures, two plates (day 17 and day 18). bioRxiv 2024. doi:10.1101/2024.08.21.608974. Dataset downloaded by the burst-shape tutorial from figshare. *Author list and title to be completed from the preprint.*
+2. Vinogradov O, Giannakakis E, Buendia V, Uysal B, Ron S, Weinreb E, Schwarz N, Lerche H, Moses E, Levina A. Effective excitability captures network dynamics across development and phenotypes. bioRxiv 2024. doi:10.1101/2024.08.21.608974. Bicuculline (blocked inhibition) recordings of mouse cortical cultures, two plates (day 17 and day 18); dataset downloaded by the burst-shape tutorial from figshare.
 3. Lamberti M, van Putten M, Marzen S, le Feber J. NMDA receptors involvement in memory and prediction. Dryad, 2024. doi:10.5061/dryad.qz612jmpv. The scripts use the folder `Test APV concentration`. Associated paper: Lamberti M, van Putten MJAM, Marzen S, le Feber J. The role of NMDA receptors in memory and prediction in cultured neural networks. *Journal of Neural Engineering* 2025, doi:10.1088/1741-2552/adb5c5 (preprint: bioRxiv doi:10.1101/2024.02.01.578348).
 
 ## Methods and software
