@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24238927.svg)](https://doi.org/10.5281/zenodo.24238927)
+
 # Asper Labs: public MEA reanalysis
 
 Code behind *Asper Labs: public MEA reanalysis* (v7, November 2026; PDF in `docs/`).
