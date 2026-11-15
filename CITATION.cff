@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or analysis, please cite it as below."
+title: "Asper Labs: public MEA reanalysis"
+type: software
+authors:
+  - family-names: "Bhanushali"
+    given-names: "Prisha"
+repository-code: "https://github.com/prishab0/Asper-MEA-Analysis"
+license: MIT
+version: "0.1.0"
+date-released: "2026-11-14"
+abstract: "Exploratory reanalysis of public multielectrode array data asking whether burst shape and evoked-response decoding keep compound-specific information that firing rate discards. Not a validated result."
