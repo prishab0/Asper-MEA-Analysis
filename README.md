@@ -1,8 +1,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24238927.svg)](https://doi.org/10.5281/zenodo.24238927)
 
-# Asper Labs: public MEA reanalysis
+# Public MEA reanalysis: burst shape and evoked-response decoding
 
-Code behind *Asper Labs: public MEA reanalysis* (v7, November 2026; PDF in `docs/`).
+Code behind the preprint manuscript (November 2026; PDF in `docs/`).
 
 The question: does a representation of the spatiotemporal response, or of burst shape, carry compound-specific information that aggregate measures such as mean firing rate discard? Everything here runs on **public** data. No new recordings were generated.
 

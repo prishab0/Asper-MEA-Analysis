@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or analysis, please cite it as below."
-title: "Asper Labs: public MEA reanalysis"
+title: "Public MEA reanalysis: burst shape and evoked-response decoding"
 type: software
 authors:
   - family-names: "Bhanushali"

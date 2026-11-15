@@ -15,11 +15,11 @@ Get the data (about 1.5 GB of compact spike and stimulus files):
 
 Then, from the download directory:
 
-    python theraputing_mea_analysis.py compare      # the headline comparison
-    python theraputing_mea_analysis.py controls     # artifact, leakage, shuffle
-    python theraputing_mea_analysis.py rate         # firing rate vs decoding
-    python theraputing_mea_analysis.py power        # paired endpoint and power
-    python theraputing_mea_analysis.py all
+    python evoked_decoder.py compare      # the headline comparison
+    python evoked_decoder.py controls     # artifact, leakage, shuffle
+    python evoked_decoder.py rate         # firing rate vs decoding
+    python evoked_decoder.py power        # paired endpoint and power
+    python evoked_decoder.py all
 
 Requires numpy and scikit-learn. Seed is fixed at 0 throughout.
 
@@ -46,7 +46,7 @@ single-electrode in sequence, not designed spatial patterns. The NETWORK feature
 set was constructed for this analysis and a published comparator would be
 stronger. Cross-culture generalisation is untested.
 
-Prisha Bhanushali, Asper Labs, October 2026.
+Prisha Bhanushali, October 2026.
 """
 import sys
 import os
@@ -195,7 +195,7 @@ def blocked_score(X, y, frac=0.7):
     """Train on the first 70% of the recording, test on the last 30%.
 
     Trials are in time order, so this also measures what a decoder frozen on an
-    earlier period retains, which is the design the assay depends on.
+    earlier period retains, which is the design a within-well study would depend on.
     """
     cut = int(len(y) * frac)
     model = classifier().fit(X[:cut], y[:cut])

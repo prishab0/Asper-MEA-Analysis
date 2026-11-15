@@ -155,7 +155,7 @@ def run_transfer(n_rec):
         print('%-34s %6d %7.1f%%' % ('DIFFERENT culture', len(diff_c), 100 * np.mean(diff_c)))
     print('%-34s %6s %7.1f%%' % ('chance', '', 100 * chance))
     print('\nCross-culture accuracy near chance means the decoder is culture-specific:')
-    print('the result supports per-culture decoding (the assay design), not a')
+    print('the result supports per-culture decoding (a per-well design), not a')
     print('universal readout. Say that plainly in any write-up.')
 
 
