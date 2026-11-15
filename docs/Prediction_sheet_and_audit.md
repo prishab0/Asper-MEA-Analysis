@@ -26,16 +26,16 @@ Readouts: mean rate, burst count, width, interval, shape coordinates s1 and s2, 
 Design: at least 24 wells per arm, 2 plates from different preparations, drug and vehicle wells randomized across rows (the existing data confound all bicuculline wells into rows A and B).
 Falsified if: (1) shape features do not separate arms at AUC above 0.7 in both plates after rate matching; (2) direction of any shape feature flips between plates; (3) separation disappears when train and test come from different cultures.
 Not claimed: that these readouts distinguish rescue from suppression. That is untested.
-Wells needed: the real day 17 and day 18 data give control CV of 0.26 to 0.55 for rate, so detecting a 30% effect needs roughly 12 to 40 wells per arm; confirm with a power calculation on your own pilot.
+Wells needed: for the decoder-accuracy endpoint, public untreated recordings give a between-recording SD of 24.1 points and a within-recording SD of 5.9 points (evoked_decoder.py power). At 80% power, a between-arm design needs about 92 wells per arm for a 10-point change; a paired pre/post design needs about 3. Accuracy also drifted down by 4.3 points with no drug present, so every endpoint must be vehicle-corrected against time-matched controls.
 
 ## 4. Claim to source audit
 | Claim in manuscript | Value | Source | Status |
 |---|---|---|---|
-| Recording-level decoder accuracy | 36.5% (36.8% in your rerun) | decoder script output | State both or the rerun value; confirm which the text uses |
-| Culture-level accuracy | 39.9% [28.7, 52.0] | culture bootstrap, 10,000 resamples | matches summary |
+| Recording-level decoder accuracy | 36.8% | evoked_decoder.py compare, mean of 24 (rate 4.8, network 7.6, chance 1.8) | RESOLVED: manuscript and one-pagers corrected from 36.5 to 36.8 |
+| Culture-level accuracy | 39.9% [28.7, 52.0] | culture_level.py (14 cultures; rate 5.4, network 8.5) | Reproduced from the rounded table: 39.9 [28.8, 51.9]; interval differs by 0.1 from rounding |
 | Rate-only / network decoder | 5.4% / 8.5% | decoder output | matches summary |
 | Chance | 1.8% | 1/n classes | check class count |
-| Spatial beats rate | 14 of 14 cultures, min margin 5.9 points | culture-level check | matches summary |
+| Spatial beats network | 14 of 14 cultures, min margin 5.9 points | culture_level.py | RESOLVED: manuscript said "rate"; the 5.9 margin is against network, text corrected |
 | Transfer | 36.2 / 7.7 / 5.7% | transfer test | matches summary |
 | Plate replication | c1 AUC 1.000, p 2.4e-05, n=24 per plate (14 control, 10 bic) | frozen_wells.csv | matches; note the row confound |
 | Shape AUCs | 1.000 / 0.878 / 0.771 | revised feature set | confirm they are the plate numbers in Table 1 |
@@ -43,3 +43,5 @@ Wells needed: the real day 17 and day 18 data give control CV of 0.26 to 0.55 fo
 | s1 | consistent direction but AUC 0.057 vs 0.321 | real_wells.csv | weak, state as direction only |
 
 Open items: line up each manuscript number against a script output file with the commit hash; the 36.5 vs 36.8 discrepancy needs one canonical figure; "Competing interests: none" and "no external funding" must stay true (EF $10,000 grant, any company use).
+
+Open: the 36.5% vs 35.8% frozen-split control in the manuscript is a separate single-recording check and was left unchanged. The 'rate-matched pairs' output of evoked_decoder.py compares different cultures and ages and should not be cited as evidence about function.
