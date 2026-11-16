@@ -1,0 +1,33 @@
+MEA WELL-LEVEL REPORT  (/home/claude/sim/real_wells.csv)
+wells: 48 read, 47 kept after QC
+treated: 20, control: 27, plates: [17, 18]
+
+1. LAYOUT CHECK
+  plate 17: treated rows [1, 2], control rows [1, 2, 3, 4]; AUC of row 0.07, of column 0.64  <-- POSITION PREDICTS TREATMENT
+  plate 18: treated rows [1, 2], control rows [1, 2, 3, 4]; AUC of row 0.08, of column 0.64  <-- POSITION PREDICTS TREATMENT
+
+2. DIRECTION CHECK  (AUC treated vs control per plate; 0.5 = no difference)
+  feature          17       18   agree?
+  mfr           0.036    0.769   NO (flips)
+  s1            0.057    0.288   yes
+  s2            0.946    1.000   yes
+  nb            0.100    0.688   NO (flips)
+  dur           0.350    0.669   NO (flips)
+  ibi           0.900    0.315   NO (flips)
+  frac          0.036    0.769   NO (flips)
+
+3. CROSS-PLATE TRANSFER  (train on one plate, test on another; AUC)
+  rate only   17 -> 18: 0.231
+  rate only   18 -> 17: 0.036
+  shape only  17 -> 18: 1.000
+  shape only  18 -> 17: 0.996
+
+4. LEAVE-ONE-WELL-OUT  (balanced accuracy, labels permuted within plate)
+  rate only   0.426  permutation p = 0.8557
+  shape only  0.975  permutation p = 0.0050
+
+5. VERDICT
+  WARNING: direction flips between plates for: mfr, nb, dur, ibi, frac
+  WARNING: plate position predicts treatment, so treatment effects cannot be separated from position
+  This report cannot show that a readout separates rescue from suppression; that needs
+  drug arms matched on firing rate with randomized plate layout and vehicle correction.
