@@ -1,0 +1,20 @@
+SIMULATED wells: 82 kept of 96 (>=3 bursts). dropped by arm: {'disease': 1, 'rescue': 5, 'supp_drive': 4, 'supp_gee': 4}
+
+Rescue vs rate-matched suppression (both mechanisms pooled), each plate held out: mean AUC (worst plate)
+  logistic      rate only                                0.496 (0.396)
+  logistic      aggregate (rate,bursts,interval,frac)    0.988 (0.972)
+  logistic      shape (peak,rise,asym)                   1.000 (1.000)
+  logistic      all                                      1.000 (1.000)
+  random forest rate only                                0.556 (0.458)
+  random forest aggregate (rate,bursts,interval,frac)    0.988 (0.972)
+  random forest shape (peak,rise,asym)                   1.000 (1.000)
+  random forest all                                      1.000 (1.000)
+
+Mixed-effects: feature ~ arm + (1|plate), reference = rescue
+  rate     disease +13.50 (p=2.7e-35) supp_drive -0.29 (p=0.8) supp_gee -1.18 (p=0.3)
+  bursts   disease +0.14 (p=0.76) supp_drive -4.62 (p=3.1e-21) supp_gee -3.87 (p=2.3e-15)
+  interval disease +0.82 (p=0.31) supp_drive +9.45 (p=2.8e-29) supp_gee +7.77 (p=2.6e-20)
+  frac     disease -0.03 (p=0.00011) supp_drive -0.07 (p=3.6e-20) supp_gee -0.07 (p=1.9e-19)
+  peak     disease +183.11 (p=1.8e-100) supp_drive +203.14 (p=3e-114) supp_gee +172.33 (p=9.2e-83)
+  rise     disease -0.16 (p=3.2e-27) supp_drive -0.16 (p=1.3e-24) supp_gee -0.15 (p=6.7e-22)
+  asym     disease +0.71 (p=1.3e-110) supp_drive +0.91 (p=6.8e-166) supp_gee +0.40 (p=9.9e-34)
